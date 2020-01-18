@@ -1,0 +1,47 @@
+<html>
+<head lang="en">
+
+	<title>RS ROEMANI | Muhamammadiyah Semarang</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" src="hubungi.js"></script>
+</head>
+<body>
+	<div class="container2">
+        <div class="index1"> <a href="profil.html"> Profil </a></div>
+        <div class="index2"> <a href="mhd.html">Kemuhammadiyahan</a>  </div>
+        <div class="index3"> <a href="hubungi.html"> Hubungi Kami </a> </div>
+        <div class="index4">  Konsultasi </div>
+        <div class="index5"> Manajemen</div>
+        <div class="index6"> Alur Pelayanan  </div>
+        <div class="index7"> Jurnal </div>
+    </div>
+    
+    <div class="container3">
+        <div class="index9"><a href="uts.html"><img src="gambar/gambar5.png" width="500px" height="100px" ></a></div>
+        <div class="index10">Layanan <br>Fasilitas</div>
+        <div class="index11">Daftar <br> Online</div>
+        <div class="index12">Jadwal<br> Dokter <br>Spesialis</div>
+    </div>
+    
+    <hr color="green" size="18px" >
+
+    <form>
+        <select name="dokter" onChange="tampilDokter(this.value);">
+            <option value="">Dokter</option>
+            <option value="DokterUmum">Dokter Umum</option>
+            <option value="DokterMata">Dokter Mata</option>
+            <option value="DokterGigi">Dokter Gigi</option>
+            <option value="DokterKulit">Dokter Kulit</option>
+            <option value="DokterBedah">Dokter Bedah </option>
+            
+        </select>
+    </form>
+    <div id='dktr'></div>
+</body>
+
+</html>  

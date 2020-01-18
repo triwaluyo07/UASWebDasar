@@ -1,0 +1,72 @@
+<html>
+<head lang="en">
+
+	<title>RS ROEMANI | Muhamammadiyah Semarang</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="container2">
+        <div class="index1"> <a href="profil.html"> Profil </a></div>
+        <div class="index2"> <a href="mhd.html">Kemuhammadiyahan</a>  </div>
+        <div class="index3"> <a href="hubungi.html"> Hubungi Kami </a> </div>
+        <div class="index4">  Konsultasi </div>
+        <div class="index5"> Manajemen</div>
+        <div class="index6"> Alur Pelayanan  </div>
+        <div class="index7"> Jurnal </div>
+    </div>
+    
+    <div class="container3">
+        <div class="index9"><a href="uts.html"><img src="gambar/gambar5.png" width="500px" height="100px" ></a></div>
+        <div class="index10">Layanan <br>Fasilitas</div>
+        <div class="index11">Daftar <br> Online</div>
+        <div class="index12">Jadwal<br> Dokter <br>Spesialis</div>
+    </div>
+    
+    <hr color="green" size="18px" >
+
+    <button type="button" onclick="loadXMLDoc()">Profile</button>
+			<br><br>
+			<table id="demo"></table>
+
+			<script>
+				function loadXMLDoc() {
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					myFunction(this);
+					}
+				};
+				xmlhttp.open("GET", "daftar.xml", true);
+				xmlhttp.send();
+				}
+
+				function myFunction(xml) {
+				var i;
+				var xmlDoc = xml.responseXML;
+				var table="<tr><th>Nama</th><th>Jalan</th></tr>Telepon</th></tr>Email</th></tr>";
+				var x = xmlDoc.getElementsByTagName("daftar");
+				for (i = 0; i <x.length; i++) { 
+					table += "<tr><td>" +
+					x[i].getElementsByTagName("nama")[0].childNodes[0].nodeValue +
+					"</td><td>" +
+					x[i].getElementsByTagName("jalan")[0].childNodes[0].nodeValue +
+                    "</td></tr>"+
+                    x[i].getElementsByTagName("telepon")[0].childNodes[0].nodeValue +
+                    "</td></tr>"+
+                    x[i].getElementsByTagName("email")[0].childNodes[0].nodeValue +
+                    "</td></tr>";
+                    
+				}
+				document.getElementById("demo").innerHTML = table;
+				}
+			</script>
+		</div>
+
+</body>
+
+
+</html>  
